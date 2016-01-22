@@ -1,0 +1,68 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+/* Larger than mobile */
+@media (min-width: 400px) {
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  #name{
+    position: relative;
+    float: left;
+    text-transform: uppercase;
+    font: FontAwesome;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    margin-left: 35px;
+    text-decoration: none;
+    line-height:6.5rem;
+    color: #222;
+  }
+  .navbar-spacer {
+    display: none;
+  }
+
+  .navbar, .navbar-spacer {
+    display: block;
+    width: 100%;
+    height: 6.5rem;
+    background: #FFFFFF;
+    z-index: 99;
+    border: 1px solid #eee;
+  }
+
+  .navbar-list {
+    list-style: none;
+    margin-bottom: 0;
+  }
+
+  .navbar-item {
+    position: relative;
+    float: right;
+    margin-bottom: 0;
+  }
+
+  .navbar-link {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    margin-left: 35px;
+    text-decoration: none;
+    line-height:6.5rem;
+    color: #222;
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+}
