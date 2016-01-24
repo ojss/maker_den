@@ -1,0 +1,4 @@
+ojas:
+  name: example
+  email: example@railstutorial.org
+  password_digest: <%= User.digest('password') %>
