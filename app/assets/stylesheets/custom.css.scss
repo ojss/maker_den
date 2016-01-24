@@ -1,6 +1,28 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import url(https://fonts.googleapis.com/css?family=Rock+Salt);
+
+#wrapper {
+  background: url("BingWallpaper-2015-07-31.jpg") top center;
+  background-size: cover;
+  width: 100%;
+  min-height: 680px;
+}
+
+#punch-text {
+  padding-top: 15rem;
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+#form-placement {
+  padding: 15rem;
+}
+
+.text-box-style {
+  width: 100%;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {
 }
@@ -79,8 +101,8 @@
     display: block;
     width: 100%;
     height: 6.5rem;
-    background: #FFFFFF;
-    //z-index: 99;
+    background: #EFEFEF;
+    z-index: 99;
     border: 0px solid #eee;
   }
 
@@ -109,7 +131,7 @@
 
 /* Larger than desktop */
 @media (min-width: 1000px) {
-  #name{
+  #name {
     position: relative;
     text-transform: uppercase;
     font-family: 'Rock Salt', cursive;
@@ -118,7 +140,7 @@
     letter-spacing: 0.2rem;
     margin-left: 35px;
     text-decoration: none;
-    line-height:6.5rem;
+    line-height: 6.5rem;
     color: #222;
   }
   .navbar-spacer {
@@ -152,14 +174,14 @@
     letter-spacing: 0.2rem;
     margin-left: 35px;
     text-decoration: none;
-    line-height:6.5rem;
+    line-height: 6.5rem;
     color: #222;
   }
 }
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
-  #name{
+  #name {
     position: relative;
     text-transform: uppercase;
     font-family: 'Rock Salt', cursive;
@@ -168,7 +190,7 @@
     letter-spacing: 0.2rem;
     margin-left: 35px;
     text-decoration: none;
-    line-height:6.5rem;
+    line-height: 6.5rem;
     color: #222;
   }
   .navbar-spacer {
@@ -202,7 +224,7 @@
     letter-spacing: 0.2rem;
     margin-left: 35px;
     text-decoration: none;
-    line-height:6.5rem;
+    line-height: 6.5rem;
     color: #222;
   }
 }
