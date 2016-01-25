@@ -1,42 +1,41 @@
 <% provide(:title, 'Sign Up') %>
 
-<!--TODO Build the signup page-->
-<!--TODO make a header shim/partial-->
-
 <div class="container" id="form-placement">
-  <div class="row">
-    <%= form_for(@user) do |f| %>
-        <div>
 
-          <div class="six columns offset-by-two">
-            <%= f.label :name %>
-            <%= f.text_field :name, placeholder: 'Your user name', class: 'text-box-style' %>
-          </div>
+  <%= form_for(@user) do |f| %>
+      <div class="row">
+        <div class="container">
+          <%= render 'shared/error_messages', object: f.object %>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="six columns">
+          <%= f.label :name %>
+          <%= f.text_field :name, placeholder: 'Your user name', class: 'text-box-style' %>
+        </div>
+        <div class="six columns">
+          <%= f.label :email %>
+          <%= f.email_field :email, placeholder: 'example@goo.com', class: 'text-box-style' %>
+        </div>
+      </div>
 
-          <div class="six columns offset-by-two">
-            <%= f.label :email %>
-            <%= f.email_field :email, placeholder: 'example@goo.com', class: 'text-box-style' %>
-          </div>
-
-
-          <div class="six columns offset-by-two">
-            <%= f.label :password %>
-            <%= f.password_field :password, placeholder: 'Password', class: 'text-box-style' %>
-          </div>
-
-
-          <div class=" six columns offset-by-two">
-            <%= f.label :password_confirmation, "Password Confirmation" %>
-            <%= f.password_field :password_confirmation, placeholder: 'Password confirmation', class: 'text-box-style' %>
-          </div>
+      <div class="row">
+        <div class="six columns">
+          <%= f.label :password %>
+          <%= f.password_field :password, placeholder: 'Password', class: 'text-box-style' %>
+        </div>
 
 
-          <div class="six columns offset-by-two">
-            <%= f.submit "Create my account", class: 'button button-primary' %>
-          </div>
+        <div class=" six columns">
+          <%= f.label :password_confirmation, "Password Confirmation" %>
+          <%= f.password_field :password_confirmation, placeholder: 'Password confirmation', class: 'text-box-style' %>
+        </div>
+      </div>
 
-    <% end %>
-    </div>
-  </div>
+      <div class="six columns offset-by-two">
+        <%= f.submit "Create my account", class: 'button button-primary' %>
+      </div>
+
+  <% end %>
 </div>

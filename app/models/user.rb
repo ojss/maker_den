@@ -17,6 +17,11 @@ class User < ActiveRecord::Base
     BCrypt::Password.create(string, cost: cost)
   end
 
+  # Random token generator
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
 
   private
   # Converts an email into all lower-case
