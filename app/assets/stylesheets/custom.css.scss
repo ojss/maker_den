@@ -2,6 +2,7 @@
 @import "font-awesome";
 @import url(https://fonts.googleapis.com/css?family=Rock+Salt);
 // TODO move the navbar styles out into the general area
+//TODO make a hamburger menu
 header {
   background-color: #EFEFEF;
 }
@@ -52,7 +53,7 @@ header {
 
 #punch-text {
   padding-top: 15rem;
-  font-size: 3rem;
+  font-size: 1.5em;
   color: #ffffff;
 }
 
