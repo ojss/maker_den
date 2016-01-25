@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      flash.now[:success] = "Your account has been created"
-      render 'new'
+      flash[:success] = "Your account has been created"
+      redirect_to root_url
       # TODO send the user to his/page
     else
       flash.now[:danger] = "There was a problem"
