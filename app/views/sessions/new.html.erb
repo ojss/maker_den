@@ -1,0 +1,37 @@
+<% provide(:title, 'Login') %>
+
+<div class="container">
+  <div class="row">
+    <div class="twelve columns offset-by-three">
+      <h1 id="sign-in-heading">Sign In</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= form_for(:session, url: login_path) do |f| %>
+      <div class="row">
+        <div class="six columns">
+          <%= f.label :email %>
+          <%= f.text_field :email, placeholder: 'tommy@dogworld.com' %>
+        </div>
+
+        <div class="six columns">
+          <%= f.label :password %>
+          <%= f.password_field :password, placeholder: 'Your password', required: true %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="twelve columns offset-by-one-half">
+          <%= f.submit 'Sign In!', class: 'button button-primary' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="container">
+          <%= render 'shared/error_messages', object: f.object %>
+        </div>
+      </div>
+  <% end %>
+</div>
