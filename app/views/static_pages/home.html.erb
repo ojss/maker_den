@@ -1,4 +1,4 @@
-<!--TODO Put a cover image or color-->
+<!--TODO put multiple cover images that keep changing-->
 
 
 <div id="wrapper">
@@ -8,18 +8,17 @@
       <p>Go out, look around, find something to do, <em>make</em> something.</p>
     </div>
   </div>
+</div>
 
-  <div class="container">
-    <div class="row">
-      <div class="twelve columns">
-        <div class="container">
-          <% flash.each do |message_type, message| %>
-              <div class="alert alert-<%= message_type %>">
-                <%= message %>
-              </div>
-          <% end %>
-        </div>
-      </div>
+
+<div class="container flash-messages">
+  <div class="row">
+    <div class="container ">
+      <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>">
+            <%= message %>
+          </div>
+      <% end %>
     </div>
   </div>
 </div>
