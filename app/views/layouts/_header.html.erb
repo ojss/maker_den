@@ -7,10 +7,14 @@
       <nav class="navbar">
         <ul class="navbar-list">
           <li class="navbar-item">
-            <%= link_to 'Join Now', signup_path, class: 'navbar-link' %>
+            <%= link_to('Join Now', signup_path, class: 'navbar-link') if !logged_in? %>
           </li>
           <li class="navbar-item">
-            <%= link_to 'Log In', '#', class: 'navbar-link' %>
+            <% if logged_in? %>
+                <%= link_to 'Log Out', logout_path, class: 'navbar-link', method: :delete %>
+            <% else %>
+                <%= link_to 'Log in', login_path, class: 'navbar-link' %>
+            <% end %>
           </li>
         </ul>
       </nav>

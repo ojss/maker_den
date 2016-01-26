@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+
+  attr_accessor :remember_token
   before_save :downcase
 
   validates :name, presence: true, length: {maximum: 100}
@@ -22,6 +24,17 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+
+  # When the user wants to be remembered this function generates a unique hash to be stored for that purpose
+  def remember
+    self.remember_token = User.new_token
+    update_attribute :remember_digest, User.digest(self.remember_token)
+  end
+
+  # Called when user logs out, has to be forgotten then
+  def forget
+    update_attribute :remember_digest, nil
+  end
 
   private
   # Converts an email into all lower-case

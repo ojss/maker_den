@@ -13,25 +13,36 @@
       <div class="row">
         <div class="six columns">
           <%= f.label :email %>
-          <%= f.text_field :email, placeholder: 'tommy@dogworld.com' %>
+          <%= f.text_field :email, class: 'text-box-style' %>
         </div>
 
         <div class="six columns">
           <%= f.label :password %>
-          <%= f.password_field :password, placeholder: 'Your password', required: true %>
+          <%= f.password_field :password, placeholder: 'Your password', required: true, class: 'text-box-style' %>
         </div>
+      </div>
+      <div class="row">
+        <%= f.label :remember_me, class: 'checkbox inline' do %>
+            <%= f.check_box :remember_me %>
+            <span>Remember me on this PC</span>
+        <% end %>
       </div>
 
       <div class="row">
-        <div class="twelve columns offset-by-one-half">
-          <%= f.submit 'Sign In!', class: 'button button-primary' %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="container">
-          <%= render 'shared/error_messages', object: f.object %>
+        <div class="seven columns offset-by-three">
+          <%= f.submit "Sign In", class: 'button button-primary' %>
         </div>
       </div>
   <% end %>
+  <div class="container flash-messages">
+    <div class="row">
+      <div class="container ">
+        <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>">
+              <%= message %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,15 +1,15 @@
 <!--TODO put multiple cover images that keep changing-->
 
-
-<div id="wrapper">
-  <div class="container" id="punch-text">
-    <div class="seven columns">
-      <h2>Make something </h2>
-      <p>Go out, look around, find something to do, <em>make</em> something.</p>
+<% if !logged_in? %>
+    <div id="wrapper">
+      <div class="container" id="punch-text">
+        <div class="seven columns">
+          <h2>Make something </h2>
+          <p>Go out, look around, find something to do, <em>make</em> something.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
+<% end %>
 
 <div class="container flash-messages">
   <div class="row">
