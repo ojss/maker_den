@@ -5,10 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5.1'
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.10'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'materialize-sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -36,6 +35,9 @@ group :development, :test do
   gem 'spring'
   gem 'sqlite3'
   gem 'byebug'
+  gem 'terminal-notifier-guard'
+  gem 'guard-livereload', '~> 2.4', require: false
+  gem "rack-livereload"
 end
 group :test do
   gem 'minitest-reporters', '1.0.5'
