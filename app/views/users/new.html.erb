@@ -1,7 +1,7 @@
 <% provide(:title, 'Sign Up') %>
 
 <div class="container" id="form-placement">
-
+  <!--form_for is a Rails helper, makes it easy to create the form, read the Rails docs for more info-->
   <%= form_for(@user) do |f| %>
       <div class="row">
         <div class="six columns">
@@ -34,6 +34,7 @@
 
       <div class="row">
         <div class="container">
+          <!--Rendering any error messages in the form by passing the form object to the error_messages partial-->
           <%= render 'shared/error_messages', object: f.object %>
         </div>
       </div>

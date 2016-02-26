@@ -1,9 +1,13 @@
 module SessionsHelper
+  # Creates a new session for the given user
+  # session is an inbuilt feature of rails so is cookies
 
+  # !!!!!!!   DO NOT TOUCH ANY OF THE CODE BELOW    !!!!!!!!!!!!!
   def log_in(user)
     session[:user_id] = user.id
   end
 
+  # Logs out the user and deletes the cookie by calling forget
   def log_out
     forget(current_user)
     session.delete(:user_id)
@@ -37,6 +41,7 @@ module SessionsHelper
     cookies.permanent[:remember_token] = user.remember_token
   end
 
+  # The function that actually deletes the cookie from the browser.
   def forget(user)
     user.forget
     cookies.delete(:user_id)

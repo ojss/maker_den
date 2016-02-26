@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
 
   end
 
+  # DOC: This function creates a new session on the server ie: logs people in
   def create
     strong_params = user_params_login
     user = User.find_by(email: strong_params[:email])
@@ -20,12 +21,14 @@ class SessionsController < ApplicationController
 
   end
 
+  # DOC: Logs a user out of their session.
   def destroy
     log_out if logged_in?
     redirect_to root_url
   end
 
   private
+  # Ensures that only the required params are permitted, so that no invalid parameter not belonging to the form in passed
   def user_params_login
     strong_params = params.require(:session).permit(:email, :password, :remember_me)
   end

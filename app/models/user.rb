@@ -1,8 +1,12 @@
 class User < ActiveRecord::Base
+  # User model
+  # !!!!!   DO NOT MODIFY UNLESS NECESSARY !!!!!
 
+  # attr_accessor is a method that creates and allows us to read and write to a virtual variable.
   attr_accessor :remember_token
+  # before_save is a callback. Executed when a new user is going to be saved.
   before_save :downcase
-
+  # Validations on the data.
   validates :name, presence: true, length: {maximum: 100}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :email,
@@ -11,6 +15,8 @@ class User < ActiveRecord::Base
             format: {with: VALID_EMAIL_REGEX},
             uniqueness: {case_sensitive: false}
 
+  # has_secure_password belongs to the bcrypt gem. Creates attr_accessors for password and its confirmation
+  # in the end only stores the digest(hash) of the plain text password in the DB.
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}
 
