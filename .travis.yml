@@ -1,0 +1,11 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.2.4
+notifications:
+  email:
+    - ojas.shirekar@gmail.com
+    - rohitjones21@gmail.com
+    - yashmandloi@gmail.com
+  on_success: always
+  on_failure: always

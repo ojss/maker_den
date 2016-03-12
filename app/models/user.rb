@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :topics, dependent: :destroy
   # User model
   # !!!!!   DO NOT MODIFY UNLESS NECESSARY !!!!!
 
