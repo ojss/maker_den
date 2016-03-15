@@ -1,4 +1,33 @@
-ojas:
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#empty
+
+nova:
   name: example
   email: example@railstutorial.org
   password_digest: <%= User.digest('password') %>
+
+
+evie:
+  name: exampley
+  email: evIl@loo.com
+  password_digest: <%= User.digest('password') %>
+
+
+jacob:
+  name: Jacob Frye
+  email: assassin@creed.com
+  password_digest: <%= User.digest('password') %>
+
+
+geralt:
+  name: Geralt of Rivia
+  email: witcher@morhen.com
+  password_digest: <%= User.digest('password') %>
+
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= Faker::Name.name %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>

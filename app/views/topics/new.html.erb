@@ -1,0 +1,25 @@
+<% provide :title, 'New Link' %>
+
+<div class="container" id="form-placement">
+  <%= form_for(@topic) do |f| %>
+      <div class="row">
+        <div class="six columns">
+          <%= f.label :pageTitle, 'Page Title' %>
+          <%= f.text_field :pageTitle, placeholder: 'Title of the post', class: 'text-box-style' %>
+        </div>
+        <div class="six columns">
+          <%= f.label :link %>
+          <%= f.text_field :link, placeholder: 'Link to something interesting', class:'text-box-style' %>
+        </div>
+        <div class="twelve columns">
+          <%= f.label :description %>
+          <%= f.text_area :description, placeholder: 'Some info about the link!', class: 'text-box-style' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="six columns offset-by-two">
+          <%= f.submit "Post!", class: 'button button-primary' %>
+        </div>
+      </div>
+  <% end %>
+</div>

@@ -9,7 +9,7 @@ class Topic < ActiveRecord::Base
             format: {with: VALID_LINK_REGEX}
   validates :description,
             presence: true,
-            length: {minimum: 14}
+            length: {minimum: 140}
 
 
   private
