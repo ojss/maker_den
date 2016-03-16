@@ -14,6 +14,7 @@
               <li class="navbar-item"> <%= link_to 'Log Out', logout_path, class: 'navbar-link', method: :delete %></li>
               <li class="navbar-item"><%= link_to 'Me', @current_user, class: 'navbar-link' %></li>
               <li class="navbar-item"><%= link_to 'New topic', new_topic_path, class: 'navbar-link' %></li>
+              <li class="navbar-item"><%= link_to 'Latest', topics_path, class: 'navbar-link' %></li>
           <% else %>
               <li class="navbar-item"><%= link_to 'Log in', login_path, class: 'navbar-link' %></li>
           <% end %>

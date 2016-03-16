@@ -10,9 +10,9 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.build(clean_topic_params)
     if @topic.save
       flash[:success] = "New topic created!"
-      redirect_to root_url
+      redirect_to topics_url
     else
-      flash[:danger] = "Something went wrong!"
+      flash.now[:danger] = "Something went wrong!"
       @feed_items = []
       render 'static_pages/home'
     end
@@ -21,6 +21,14 @@ class TopicsController < ApplicationController
   def index
     @topic_feed = current_user.global_feed.paginate(page: params[:page])
     # debugger
+  end
+
+  def destroy
+    topic_id = params[:id]
+    if Topic.find_by(id: topic_id).destroy
+      flash[:danger] = "Post has been successfully deleted"
+      redirect_to topics_url
+    end
   end
 
   private

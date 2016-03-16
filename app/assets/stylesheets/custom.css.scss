@@ -4,10 +4,9 @@
 // TODO move the navbar styles out into the general area
 //TODO make a hamburger menu
 
-#sign-in-heading{
+#sign-in-heading {
   padding-top: 2em;
 }
-
 
 header {
   background-color: #EFEFEF;
@@ -176,6 +175,10 @@ header {
     line-height: 6.5rem;
     color: #222;
   }
+}
+
+.link {
+  font-family: 'Raleway', Helvetica, serif;
 }
 
 /* Larger than desktop */

@@ -1,12 +1,18 @@
 <li id="topic-<%= topic.id %>">
-  <span class="user"><%= link_to topic.user.name, topic.user %></span>
-  <span class="description">
-    <%= topic.description %>
-  </span>
+  <div class="row">
+    <span class="six columns link"><%= link_to topic.pageTitle, topic.link %></span>
+    <span><%= link_to topic.user.name, topic.user %></span>
+  </div>
+  <div class="row">
+    <div class="six columns offset-by-three description">
+      <%= topic.description %>
+    </div>
+  </div>
     <span class="timestamp">
         Posted <%= time_ago_in_words(topic.created_at) %> ago
       <% if current_user?(topic.user) %>
         <%= link_to "delete", topic_path(topic), method: :delete, data: {confirm: "You sure?"} %>
       <% end %>
     </span>
+
 </li>
