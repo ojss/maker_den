@@ -2,6 +2,8 @@ class Topic < ActiveRecord::Base
   belongs_to :user
   before_save :get_page_title
 
+  default_scope -> { order(:created_at => :desc) }
+
   VALID_LINK_REGEX = /(?:https?:\/\/)?(?:[\w]+\.)(?:\.?[\w]{2,})+$\z/i
 
   validates :link,

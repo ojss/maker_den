@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   include SessionsHelper
-  before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, only: [:new, :create, :index]
 
   def new
     @topic = Topic.new
@@ -18,6 +18,10 @@ class TopicsController < ApplicationController
     end
   end
 
+  def index
+    @topic_feed = current_user.global_feed.paginate(page: params[:page])
+    # debugger
+  end
 
   private
   def clean_topic_params

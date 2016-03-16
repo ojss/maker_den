@@ -31,6 +31,10 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+  # returns all the latest topics in the forum
+  def global_feed
+    results = Topic.all
+  end
 
   # When the user wants to be remembered this function generates a unique hash to be stored for that purpose
   def remember

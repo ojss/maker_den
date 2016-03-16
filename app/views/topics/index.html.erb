@@ -1,0 +1,8 @@
+<% provide :title, 'Topics' %>
+<% if @topic_feed.any? %>
+
+    <%= will_paginate @topic_feed %>
+    <ol>
+      <%= render @topic_feed %>
+    </ol>
+<% end %>
