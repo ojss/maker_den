@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   include SessionsHelper
-  before_action :logged_in_user, only: [:new, :create, :index]
+  before_action :logged_in_user, only: [:new, :create, :destroy]
 
   def new
     @topic = Topic.new
