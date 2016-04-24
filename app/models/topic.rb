@@ -1,10 +1,11 @@
 class Topic < ActiveRecord::Base
+  require 'uri'
   belongs_to :user
   before_save :get_page_title
 
   default_scope -> { order(:created_at => :desc) }
 
-  VALID_LINK_REGEX = /(?:https?:\/\/)?(?:[\w]+\.)(?:\.?[\w]{2,})+$\z/i
+  VALID_LINK_REGEX = URI.regexp
 
   validates :link,
             presence: true,
