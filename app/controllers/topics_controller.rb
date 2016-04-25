@@ -19,7 +19,7 @@ class TopicsController < ApplicationController
   end
 
   def index
-    @topic_feed = current_user.global_feed.paginate(page: params[:page])
+    @topic_feed = current_user.global_feed.paginate(page: params[:page], :per_page => 10 )
     # debugger
   end
 

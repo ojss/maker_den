@@ -13,8 +13,17 @@
 </div>
 <% if @topic_feed.any? %>
 
-    <%= will_paginate @topic_feed %>
-    <ol>
+    <div class="row center">
+      <div class="col s12">
+        <%= will_paginate @topic_feed %>
+      </div>
+    </div>
+
       <%= render @topic_feed %>
-    </ol>
+
+    <div class="row center">
+      <div class="col s12">
+        <%= will_paginate @topic_feed %>
+      </div>
+    </div>
 <% end %>

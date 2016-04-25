@@ -20,6 +20,8 @@ gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
 gem 'fog',                     '1.36.0'
 gem 'will_paginate',           '3.0.7'
+gem 'materialize-sass'
+gem 'will_paginate-materialize'
 gem 'font-awesome-sass'
 gem 'jquery-turbolinks'
 # Use jquery as the JavaScript library

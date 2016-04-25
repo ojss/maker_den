@@ -284,3 +284,21 @@ header {
 .blank {
   padding: 10px;
 }
+
+.card-title a {
+  color: #ffa726;
+  transition-duration: 0.3s;
+}
+
+.card-title a:hover {
+  color: #ffcc80;
+  transition-duration: 0.3s;
+}
+
+.card-action .row {
+  margin-bottom: 0;
+}
+
+.no_padding {
+  padding: 0px;
+}

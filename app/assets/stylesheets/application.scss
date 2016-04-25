@@ -16,3 +16,10 @@
  *= require_self
  */
 
+.pagination a li.active {
+  color: #fff;
+}
+@import "material_pagnation";
+//@import "materialize/components/color";
+//$primary-color: color("blue", "lighten-2") !default;
+@import "materialize";
