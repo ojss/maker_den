@@ -2,35 +2,36 @@
 
 <div class="container">
   <div class="row">
-    <div class="twelve columns offset-by-three">
-      <h1 id="sign-in-heading">Sign In</h1>
-    </div>
+      <h1 id="sign-in-heading" class="center-align">Sign In</h1>
   </div>
-</div>
 
-<div class="container">
   <%= form_for(:session, url: login_path) do |f| %>
       <div class="row">
-        <div class="six columns">
-          <%= f.label :email %>
-          <%= f.text_field :email, class: 'text-box-style' %>
+        <div class="input-field col s12 m8 push-m2 l6 push-l3">
+          <%= f.text_field :email, class: 'validate' %>
+          <%= f.label :email, for: 'sessions_email' %>
         </div>
-
-        <div class="six columns">
-          <%= f.label :password %>
-          <%= f.password_field :password, placeholder: 'Your password', required: true, class: 'text-box-style' %>
-        </div>
-      </div>
-      <div class="row">
-        <%= f.label :remember_me, class: 'checkbox inline' do %>
-            <%= f.check_box :remember_me %>
-            <span>Remember me on this PC</span>
-        <% end %>
       </div>
 
       <div class="row">
-        <div class="seven columns offset-by-three">
-          <%= f.submit "Sign In", class: 'button button-primary' %>
+        <div class="input-field col s12 m8 push-m2 l6 push-l3">
+          <%= f.password_field :password, required: true, class: 'validate' %>
+          <%= f.label :password, for: 'sessions_password' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m8 push-m2 l6 push-l3">
+          <%= f.check_box :remember_me, id: 'remember_me_checkbox' %>
+          <%= f.label :remember_me, 'Remember me on this PC', for: 'remember_me_checkbox' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12 m8 push-m2 l6 push-l3">
+          <%= button_tag(type: 'submit', class: 'btn waves-effect waves-light') do %>
+              <i class="material-icons right">send</i>Sign In
+          <% end %>
         </div>
       </div>
   <% end %>

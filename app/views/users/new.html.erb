@@ -1,34 +1,48 @@
 <% provide(:title, 'Sign Up') %>
 
-<div class="container" id="form-placement">
+<div class="container">
   <!--form_for is a Rails helper, makes it easy to create the form, read the Rails docs for more info-->
   <%= form_for(@user) do |f| %>
+
+      <div class="row blank">
+          <h1 class="center-align">Sign Up !</h1>
+      </div>
+      <!--<div class="row blank"></div>-->
       <div class="row">
-        <div class="six columns">
-          <%= f.label :name %>
-          <%= f.text_field :name, placeholder: 'Your user name', class: 'text-box-style' %>
-        </div>
-        <div class="six columns">
-          <%= f.label :email %>
-          <%= f.email_field :email, placeholder: 'example@goo.com', class: 'text-box-style' %>
+        <div class="input-field col s12 m8 push-m2 l6 push-l3">
+          <%= f.text_field :name, class: 'validate' %>
+          <%= f.label :name, for: 'user_name' %>
         </div>
       </div>
 
       <div class="row">
-        <div class="six columns">
-          <%= f.label :password %>
-          <%= f.password_field :password, placeholder: 'Password', class: 'text-box-style' %>
-        </div>
-
-
-        <div class=" six columns">
-          <%= f.label :password_confirmation, "Password Confirmation" %>
-          <%= f.password_field :password_confirmation, placeholder: 'Password confirmation', class: 'text-box-style' %>
+        <div class="input-field col s12 m8 push-m2 l6 push-l3">
+          <%= f.email_field :email, class: 'validate' %>
+          <%= f.label :email, for: 'user_email' %>
         </div>
       </div>
+
       <div class="row">
-        <div class="six columns offset-by-two">
-          <%= f.submit "Create my account", class: 'button button-primary' %>
+        <div class="input-field col s12 m8 push-m2 l6 push-l3">
+          <%= f.password_field :password, class: 'validate' %>
+          <%= f.label :password, for: 'user_password' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12 m8 push-m2 l6 push-l3">
+          <%= f.password_field :password_confirmation, class: 'validate' %>
+          <%= f.label :password_confirmation, for: 'user_password_confirmation'%>
+        </div>
+      </div>
+
+      <div class="row blank"></div>
+
+      <div class="row">
+        <div class="input-field col s12 m8 push-m2 l6 push-l3">
+          <%= button_tag(type: 'submit', class: 'btn waves-effect waves-light') do %>
+              <i class="material-icons right">send</i>Create my account
+          <% end %>
         </div>
       </div>
 
