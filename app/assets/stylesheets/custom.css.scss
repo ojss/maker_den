@@ -4,6 +4,10 @@
 // TODO move the navbar styles out into the general area
 //TODO make a hamburger menu
 
+html, body{
+  overflow-x: hidden;
+}
+
 #sign-in-heading {
   padding-top: 2em;
 }
